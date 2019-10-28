@@ -4,8 +4,8 @@ import { Title } from './styles';
 
 export default function Main() {
   return (
-    <Title error={false}>
-      Main<small>wee</small>
+    <Title>
+      Helllooooooo!!!!
     </Title>
   );
 }
