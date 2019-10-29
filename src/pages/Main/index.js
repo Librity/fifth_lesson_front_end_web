@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FaGithubAlt, FaPlus, FaSpinner } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
 
@@ -14,7 +15,7 @@ export default class Main extends Component {
 
   componentDidMount() {
     const repos = localStorage.getItem('repos');
-    
+
     if (repos) {
       this.setState({ repos: JSON.parse(repos) });
     }
@@ -82,7 +83,9 @@ export default class Main extends Component {
           {repos.map(repo => (
             <li key={repo.name}>
               <span>{repo.name}</span>
-              <a href="">Details</a>
+              <Link to={`/repository/${encodeURIComponent(repo.name)}`}>
+                Details
+              </Link>
             </li>
           ))}
         </List>
